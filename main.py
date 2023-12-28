@@ -13,6 +13,7 @@ def main(mail):
     # 1. Symmetric Encryption
     encryption_key = os.urandom(16)
     encrypted_data = encrypt_content(encryption_key, email_content)
+    print(type(encrypted_data))
     print("Encrypted Data:", encrypted_data)
 
     # 2. Hashing
@@ -46,3 +47,4 @@ def main(mail):
     print(f"Decrypted Content written to: {decrypted_file_path}")
 
 main('EmailSamples/email2.txt')
+# print(os.urandom(16))

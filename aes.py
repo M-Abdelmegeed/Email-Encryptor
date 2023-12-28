@@ -1,5 +1,6 @@
 from Cryptodome.Cipher import AES
 # from Cryptodome.Random import get_random_bytes
+from Crypto.Util.Padding import unpad
 import os
 
 def encrypt_content(key, content):
@@ -11,7 +12,6 @@ def decrypt_content(key, encrypted_data):
     nonce = encrypted_data[:16]
     tag = encrypted_data[16:32]
     ciphertext = encrypted_data[32:]
-
     cipher = AES.new(key, AES.MODE_GCM, nonce=nonce)
     decrypted_content = cipher.decrypt_and_verify(ciphertext, tag)
     return decrypted_content.decode('utf-8')
