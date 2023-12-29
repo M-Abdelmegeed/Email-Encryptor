@@ -5,6 +5,8 @@ from hash import calculate_hash
 from signature import generate_key_pair, sign_message, verify_signature
 
 private_key, public_key = generate_key_pair()
+print(private_key)
+print(public_key)
 
 def send_email(encryption_key,to, subject, body, attachment_paths=None):
     outlook_app = win32com.client.Dispatch("Outlook.Application")
@@ -89,7 +91,7 @@ def read_emails(subject_to_find, encryption_key, save_attachment_path="C:/Users/
 
 
 if __name__ == "__main__":
-    subject =  "Test Subject 28"
+    subject =  "Test Subject 30"
     receiver = "19p1298@eng.asu.edu.eg"
     sample_encryption_key = os.urandom(16)
     

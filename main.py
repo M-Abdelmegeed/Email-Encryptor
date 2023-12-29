@@ -12,6 +12,7 @@ def main(mail):
 
     # 1. Symmetric Encryption
     encryption_key = os.urandom(16)
+    print(encryption_key)
     encrypted_data = encrypt_content(encryption_key, email_content)
     print(type(encrypted_data))
     print("Encrypted Data:", encrypted_data)
